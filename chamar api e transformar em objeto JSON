@@ -1,0 +1,23 @@
+$(document).ready(function(){
+    requestCoinGeckoData();
+});
+
+function requestCoinGeckoData(){
+	$.ajax({
+		url: 'https://api.coingecko.com/api/v3/coins/markets?per_page=100&vs_currency=usd',
+		headers:{
+			'Content-Type': 'application/json',
+		},
+		method: 'GET',
+		dataType: 'json',
+		data: '',
+		success: function(res){
+			parseCoinData(res);
+		}
+	});
+}
+
+function parseCoinData(res){
+    
+	coinData=res;
+}
